@@ -6,4 +6,13 @@ describe('Test home API endpoint request', () => {
     const res = await request(app).get('/');
     expect(res.statusCode).toEqual(200);
     expect(res.text).toEqual('Welcome to the Drinks API!');
-}); });
+    });
+
+    test("GET on /coffeelover retuns the correct message", async () => {
+        const res = await request(app).get("/coffeelover");
+        expect(res.statusCode).toEqual(200)
+        expect(res.text).toEqual("I like coffee")
+    })
+
+
+});
